@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Fun with triangles</title>
+</head>
+<body>
+    <header>
+        <h1>Fun with triangles</h1>
+    </header>
+<section class="hypo-section">
+    <h2>Enter the lengths of sides of right angle triangle</h2>
+    <div class="triangle-container">
+        <svg height="300" width="200">
+              <polygon points="50,50 50,200 200,200" class="triangle" fill="transparent" stroke="black" stroke-width="2px" />
+              <text x=20 y=120>a</text>
+              <text x=100 y=230>b</text>
+              <text x=150 y=120>c</text>
+        </svg>
+  </div>
+    <div><h3>The formula is c=1/2*b*h</div>
+    <form class="form" id="formHyp">
+        
+        <label class="label">Base=
+        <input class="inputBox a" type="number" min="0.0001" step="0.00001" required> </label>
+        
+        <label class="label">Height=
+        <input class="inputBox b" type="number" min="0.0001" step="0.00001" required></label>
+
+        <button class="button" id="submitBtn">Submit</button> 
+    </form>
+    <div >
+        <h2 class="output">Value will be shown here</h2>
+    </div>                
+</section>
+<footer>
+    <ul>
+        <li class="links"><a href="https://github.com/rahulmistry751"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        <li class="links"><a href="https://www.linkedin.com/in/rahul-mistry-xl/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        <li class="links"><a href="https://rahul-folio.netlify.app/"><i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
+    </ul>
+</footer>
+<script>
+    const output=document.querySelector(".output");
+    const submitBtn=document.querySelector("#submitBtn");    
+    const aValue=document.querySelector(".a");    
+    const bValue=document.querySelector(".b");    
+    
+    console.log(Math.pow(aValue.value,2));
+    console.log(Math.pow(bValue.value,2));
+    submitBtn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        if(aValue.value && bValue.value){
+            let hypo=0.5*(aValue.value*bValue.value);
+            output.textContent=`Area=${Number(hypo)}`;
+        }
+        else{
+            output.textContent="Please enter both values";
+        }
+        
+    })
+</script>
+</body>
+</html>
