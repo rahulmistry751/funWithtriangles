@@ -52,11 +52,11 @@
     const aValue=document.querySelector(".a");    
     const bValue=document.querySelector(".b");    
     
-    console.log(Math.pow(aValue.value,2));
-    console.log(Math.pow(bValue.value,2));
+    //console.log(Math.pow(aValue.value,2));
+    //console.log(Math.pow(bValue.value,2));
     submitBtn.addEventListener("click",(e)=>{
         e.preventDefault();
-        if(aValue.value && bValue.value){
+        if(aValue.value && bValue.value){ //Checks if both values are entered
             let hypo=Math.sqrt(Math.pow(aValue.value,2)+Math.pow(bValue.value,2));
             output.textContent=`c=${hypo.toFixed(3)}`;
         }
