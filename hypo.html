@@ -12,8 +12,9 @@
 </head>
 <body>
     <header>
-        <h1>Triangles world</h1>
+        <h1>Hypotenuse of a triangle</h1>
     </header>
+    <a href="index.html" class="back-btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> Go Back</a>
 <section class="hypo-section">
     <h2>Enter the lengths of sides of right angle triangle</h2>
     <div class="triangle-container">
@@ -40,6 +41,7 @@
     </div>                
 </section>
 <footer>
+    <h4>Connect with me</h4>
     <ul>
         <li class="links"><a href="https://github.com/rahulmistry751"><i class="fa fa-github" aria-hidden="true"></i></a></li>
         <li class="links"><a href="https://www.linkedin.com/in/rahul-mistry-xl/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -55,7 +57,7 @@
     //console.log(Math.pow(aValue.value,2));
     //console.log(Math.pow(bValue.value,2));
     submitBtn.addEventListener("click",(e)=>{
-        e.preventDefault();
+        e.preventDefault(); // Prevents the normal/default functionality of the submit button
         if(aValue.value && bValue.value){ //Checks if both values are entered
             let hypo=Math.sqrt(Math.pow(aValue.value,2)+Math.pow(bValue.value,2));
             output.textContent=`c=${hypo.toFixed(3)}`;

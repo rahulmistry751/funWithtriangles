@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Fun with triangles</title>
+</head>
+<body>
+    <header>
+        <h1>Is It a Triangle?</h1>
+    </header>
+    <a href="index.html" class="back-btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> Go Back</a>
+    <section class="istriangle-section">
+        <h2>Enter 3 angles to check if it is a triangle</h2>
+        <div><h3>The sum of the three angles of any triangle is equal to 180 degrees</h3></div>
+        <form class="form" id="formHyp">
+        
+            <label class="label" >Angle a
+            <input class="inputBox a" type="number" min="1" max="180" required> </label>
+        
+            <label class="label">Angle b
+            <input class="inputBox b" type="number" min="1" max="180" required></label>
+            <label class="label">Angle c
+            <input class="inputBox c" type="number" min="1" max="180" required></label>
+
+            <button class="button" id="submitBtn">Check</button> 
+        </form>
+        <div >
+            <h2 class="output">Value will be shown here</h2>
+        </div>                
+    </section>
+<footer>
+    <h4>Connect with me</h4>
+    <ul>
+        <li class="links"><a href="https://github.com/rahulmistry751"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        <li class="links"><a href="https://www.linkedin.com/in/rahul-mistry-xl/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        <li class="links"><a href="https://rahul-folio.netlify.app/"><i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
+    </ul>
+</footer>
+<script>
+    let inputA=document.querySelector(".a");
+    let inputB=document.querySelector(".b");
+    let inputC=document.querySelector(".c");
+    let submit=document.querySelector("#submitBtn");
+    let output=document.querySelector(".output");
+    submit.addEventListener("click",(e)=>{
+        e.preventDefault();     // Prevents the normal/default functionality of the submit button
+        if(Number(inputA.value)+Number(inputB.value)+Number(inputC.value)===180){  //Checks the angles sum
+            output.textContent="It is a triangle!"
+        }
+        else{
+            output.textContent="These angles cannot make a triangle. Try Again!"
+        }
+    })
+</script>
+</body>
